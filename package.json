@@ -12,6 +12,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@tanstack/vue-query": "^5.92.5",
     "@trpc/client": "^11.8.1",
     "@trpc/server": "^11.8.1",
     "better-sqlite3": "^12.5.0",

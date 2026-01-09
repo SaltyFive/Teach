@@ -1,7 +1,7 @@
 ﻿<template>
-  <div>
-    hello there
-  </div>
+  <Card>
+    <h1>Hello There</h1>
+  </Card>
 </template>
 
 <script setup lang="ts">
