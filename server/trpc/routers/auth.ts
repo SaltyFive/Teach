@@ -1,5 +1,5 @@
 ﻿import { timestamp } from "drizzle-orm/gel-core";
-import { router,pulicProcedure } from "../index";
+import { router,publicProcedure } from "../index";
 import { z } from 'zod'
 import {
   registerUser,
@@ -8,12 +8,12 @@ import {
 } from '../../services/authService'
 
 export const authRouter = router({
-  health: pulicProcedure.query(() => {
+  health: publicProcedure.query(() => {
     return { status:'ok', timestamp:new Date() }
   }),
 
   //注册
-  registerUser: pulicProcedure.input(z.object({
+  registerUser: publicProcedure.input(z.object({
     username:z.string().min(3).max(20),
     password:z.string().min(6)
   }))
@@ -23,7 +23,7 @@ export const authRouter = router({
   }),
 
   //登录
-  loginUser: pulicProcedure.input(z.object({
+  loginUser: publicProcedure.input(z.object({
     username:z.string(),
     password:z.string()
   }))
@@ -32,7 +32,7 @@ export const authRouter = router({
     return res
   }),
 
-  getAllUsers: pulicProcedure
+  getAllUsers: publicProcedure
     .query(async () => {
       const res = await getAllUsers()
       return res
