@@ -1,21 +1,17 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "files": [],
-  "references": [
-    {
-      "path": "./.nuxt/tsconfig.app.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.server.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.shared.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.node.json"
-    }
-  ],
+  // Nuxt 4官方推荐配置：仅继承自动生成的配置，无需手动声明references
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "strict": true
-  }
+    // 开启严格模式
+    "strict": true,
+    // 识别自定义类型文件（比如我们之前创建的types/trpc.d.ts）
+    "typeRoots": ["./types", "./node_modules/@types"],
+    // 可选：确保TS能识别Nuxt的别名（如~/）
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    }
+  },
+  // 可选：指定需要TS检查的文件/目录（Nuxt 4会自动处理，可省略）
+  "include": ["types/**/*.d.ts", "app/**/*.ts", "app/**/*.vue", "server/**/*.ts"]
 }

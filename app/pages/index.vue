@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { useMutation } from '@tanstack/vue-query';
+import { useNuxtApp, useRouter } from 'nuxt/app';
 
 const router = useRouter()
 const { $trpc } = useNuxtApp()
