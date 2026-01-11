@@ -1,9 +1,8 @@
-﻿import { createTRPCClient } from '@trpc/client'
-import { initTRPC } from '@trpc/server'
+﻿import { initTRPC } from '@trpc/server'
 import { H3Event } from 'h3'
-export const createContext = (event:H3Event) => {
+export const createContext = (opts:any) => {
   return {
-    event
+    event: opts.event as H3Event
   }
 }
 

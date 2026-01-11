@@ -16,11 +16,11 @@ const router = useRouter()
 // import type { TRPCClient } from '@trpc/client'
 
 // If you have a type for $trpc, use it here. Otherwise, use 'any' as a temporary workaround:
-const { $trpc } = useNuxtApp()
-const { mutate:loginMutation,isPending } = useMutation({
-  mutationFn:async (credential: {username:string,password:string}) => {
-    return await $trpc.auth.loginUser.mutate(credential)
-  }
-})
+// const { $trpc } = useNuxtApp()
+// const { mutate:loginMutation,isPending } = useMutation({
+//   mutationFn:async (credential: {username:string,password:string}) => {
+//     return await $trpc.auth.loginUser.mutate(credential)
+//   }
+// })
 
 </script>

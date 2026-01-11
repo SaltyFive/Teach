@@ -1,8 +1,8 @@
-﻿import { createTRPCNuxtHandler } from 'trpc-nuxt/server'
-import { appRouter } from '../../trpc/routers'
-const createContext = () => ({});
+﻿import { createTRPCNuxtHandler } from 'trpc-nuxt/server';
+import { appRouter } from '~/server/trpc/routers';
+import { createContext } from '~/server/trpc/trpc';
 
 export default createTRPCNuxtHandler({
-  router: appRouter,
-  createContext,
-});
+  router:appRouter,
+  createContext
+})
