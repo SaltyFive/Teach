@@ -1,5 +1,4 @@
-﻿import { timestamp } from "drizzle-orm/gel-core";
-import { router,publicProcedure } from "../index";
+﻿import { router,publicProcedure } from "../trpc";
 import { z } from 'zod'
 import {
   registerUser,
@@ -18,8 +17,7 @@ export const authRouter = router({
     password:z.string().min(6)
   }))
   .mutation(async ({ input }) => {
-    const res = await registerUser(input.username,input.password)
-    return res
+    return await registerUser(input.username,input.password)
   }),
 
   //登录
@@ -28,13 +26,11 @@ export const authRouter = router({
     password:z.string()
   }))
   .mutation(async ({ input }) => {
-    const res = await loginUser(input.username,input.password)
-    return res
+    return await loginUser(input.username,input.password)
   }),
 
   getAllUsers: publicProcedure
     .query(async () => {
-      const res = await getAllUsers()
-      return res
+      return await getAllUsers()
     })
 })

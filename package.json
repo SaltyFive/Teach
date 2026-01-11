@@ -17,6 +17,7 @@
     "@trpc/server": "^11.8.1",
     "better-sqlite3": "^12.5.0",
     "drizzle-orm": "^0.45.1",
+    "h3": "2.0.1-rc.7",
     "nuxt": "^4.2.2",
     "trpc-nuxt": "^2.0.1",
     "vue": "^3.5.26",
